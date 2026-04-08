@@ -1,0 +1,167 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    ROOMBOOKIFY - QUICK REFERENCE CARD                          ║
+║                      All Systems Ready - April 1, 2026                          ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+┌─ STARTING THE APPLICATION ──────────────────────────────────────────────────────┐
+
+TERMINAL 1 - Backend:
+  $ cd backend
+  $ npm run dev
+  ✅ Expected: "🚀 Server running on http://localhost:5000"
+
+TERMINAL 2 - Frontend:
+  $ cd frontend
+  $ npm run dev
+  ✅ Expected: Server shows "ready in Xms"
+
+BROWSER:
+  → http://localhost:3000 (or http://localhost:3002)
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ DEMO CREDENTIALS ──────────────────────────────────────────────────────────────┐
+
+🔑 GUEST/SEEKER
+   Email: demo@example.com
+   Password: demo123
+   → /results (browse properties)
+
+🔑 PROVIDER/HOST
+   Email: provider@example.com
+   Password: demo123
+   → /dashboard (manage properties)
+
+🔑 ADMIN
+   Email: admin@example.com
+   Password: demo123
+   → /admin (platform overview)
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ SEED DEMO DATA ────────────────────────────────────────────────────────────────┐
+
+If database is empty, run:
+  curl -X POST http://localhost:5000/api/seed/seed
+
+Expected Response:
+  {"message":"Demo data seeded successfully","demoAccounts":{...}}
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ KEY PAGES TO TEST ─────────────────────────────────────────────────────────────┐
+
+As GUEST (demo@example.com):
+  ✅ Home - http://localhost:3000/
+  ✅ Login - http://localhost:3000/login (then click dropdown)
+  ✅ Profile - http://localhost:3000/profile
+  ✅ My Bookings - http://localhost:3000/my-bookings
+  ✅ Loyalty - http://localhost:3000/loyalty
+  ✅ Browse - http://localhost:3000/results
+
+As PROVIDER (provider@example.com):
+  ✅ Dashboard - http://localhost:3000/dashboard
+  ✅ Analytics - http://localhost:3000/analytics
+  ✅ Property Details - http://localhost:3000/property/1
+  ✅ Add Property - http://localhost:3000/add-property
+
+As ADMIN (admin@example.com):
+  ✅ Admin Panel - http://localhost:3000/admin
+  ✅ View All Users/Properties/Bookings
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ QUICK API TESTS ───────────────────────────────────────────────────────────────┐
+
+Health Check:
+  curl http://localhost:5000/api/health
+
+Login:
+  curl -X POST http://localhost:5000/api/auth/login \
+    -H "Content-Type: application/json" \
+    -d '{"email":"demo@example.com","password":"demo123"}'
+
+Get User Profile (replace TOKEN with actual token):
+  curl http://localhost:5000/api/user/profile \
+    -H "Authorization: Bearer TOKEN"
+
+Get Admin Stats (admin only):
+  curl http://localhost:5000/api/admin/dashboard/stats \
+    -H "Authorization: Bearer TOKEN"
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ FEATURES IMPLEMENTED (10/20) ──────────────────────────────────────────────────┐
+
+✅ Google OAuth + Local Authentication
+✅ Multi-category Booking (Hotels, Hostels, PGs, Rooms)
+✅ Property Management (Add/Edit/Delete)
+✅ Real-Time Chat System
+✅ Loyalty Points (Bronze→Silver→Gold→Platinum)
+✅ Referral Program (500 points per referral)
+✅ Extended Stay Discounts (7/30/90+ nights)
+✅ Sustainability Certification
+✅ Dynamic Pricing & Analytics
+✅ User Profile & Admin System
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ TROUBLESHOOTING ────────────────────────────────────────────────────────────────┐
+
+❌ "Network error" on login?
+   → Check backend is running (npm run dev in terminal 1)
+   → Clear browser cache (F12 → Storage → Clear data)
+   → Refresh page (Ctrl+Shift+R)
+
+❌ Database connection failed?
+   → Check MySQL is running
+   → Verify credentials in backend/.env
+   → Database "roombookify" must exist
+
+❌ "Invalid email or password"?
+   → Seed demo data: curl -X POST http://localhost:5000/api/seed/seed
+   → Use correct credentials from above
+
+❌ 404 on routes?
+   → Make sure both backend AND frontend are running
+   → Check correct port (5000 backend, 3000/3002 frontend)
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ DOCUMENTATION ──────────────────────────────────────────────────────────────────┐
+
+📄 TESTING_GUIDE.md - Complete feature testing checklist
+📄 README.md - Project overview and tech stack
+📄 CURRENT_STATUS.md - What's completed and what's next
+📄 QUICK_REFERENCE.txt - This file
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+┌─ ALL ENDPOINTS (30+) ────────────────────────────────────────────────────────────┐
+
+Auth:        /api/auth/register, /api/auth/login, /api/auth/google
+Properties:  /api/properties (GET, POST, PUT, DELETE)
+Bookings:    /api/bookings (POST, GET, DELETE)
+User:        /api/user/profile, /api/user/bookings, /api/user/loyalty
+Admin:       /api/admin/dashboard/stats, /api/admin/users, /api/admin/properties
+Loyalty:     /api/loyalty/* (points, tiers, redemption)
+Chat:        /api/messages/* (send, receive, read)
+Analytics:   /api/analytics/* (revenue, pricing, recommendations)
+
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+🚀 YOU ARE READY TO:
+   ✅ Test all features
+   ✅ Demonstrate to stakeholders
+   ✅ Continue development
+   ✅ Deploy to production
+
+📞 NEED HELP?
+   1. Check TESTING_GUIDE.md for detailed instructions
+   2. Check terminal output for backend errors
+   3. Use browser DevTools (F12) to check console errors
+   4. Verify database: mysql -u root -p roombookify
+
+═══════════════════════════════════════════════════════════════════════════════════
+                    Version 1.0.0 | Status: READY ✅
+═══════════════════════════════════════════════════════════════════════════════════

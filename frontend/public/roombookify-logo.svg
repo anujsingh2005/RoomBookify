@@ -1,0 +1,20 @@
+<svg width="1400" height="350" viewBox="0 0 1400 350" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Dark Blue "Room" -->
+  <text x="10" y="260" font-size="220" font-weight="800" font-family="Arial, sans-serif" fill="#003DB4">Room</text>
+
+  <!-- Cyan Suitcase/Building Icon with Location Pin -->
+  <g transform="translate(600, 50)">
+    <!-- Suitcase body -->
+    <rect x="0" y="60" width="140" height="110" rx="8" fill="none" stroke="#0BA5E9" stroke-width="12"/>
+
+    <!-- Handle curve -->
+    <path d="M 30 60 Q 30 15, 70 15 Q 110 15, 110 60" fill="none" stroke="#0BA5E9" stroke-width="12" stroke-linecap="round"/>
+
+    <!-- Location Pin -->
+    <circle cx="70" cy="110" r="22" fill="#0BA5E9"/>
+    <path d="M 70 140 L 48 175 Q 70 200, 70 200 Q 70 200, 92 175 Z" fill="#0BA5E9"/>
+  </g>
+
+  <!-- Cyan Blue "Bookify" -->
+  <text x="800" y="260" font-size="220" font-weight="800" font-family="Arial, sans-serif" fill="#0BA5E9">Bookify</text>
+</svg>
