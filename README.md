@@ -2,7 +2,7 @@
 
 RoomBookify is a full-stack accommodation booking platform for discovering and booking rooms, PGs, hostels, hotels, and flats in one place.
 
-It combines classic booking flows with three stronger differentiators:
+It is built around three stronger product differentiators:
 - commute-fit search by office, college, metro, or landmark
 - liveability scoring from structured tenant reviews
 - move-in assurance badges for properties that offer listing-match support
@@ -16,8 +16,8 @@ It combines classic booking flows with three stronger differentiators:
 - Booking flow with My Bookings tracking
 - Post-stay liveability reviews from completed bookings
 - Provider property management with location coordinates
-- JWT auth plus Google OAuth support
-- Loyalty, referral, chat, analytics, pricing, and admin modules already scaffolded
+- JWT authentication plus Google OAuth support
+- Loyalty, referral, chat, analytics, pricing, and admin modules
 
 ## Tech Stack
 
@@ -30,25 +30,25 @@ It combines classic booking flows with three stronger differentiators:
 
 ```text
 RoomBookify/
-├─ backend/
-│  ├─ config/
-│  ├─ controllers/
-│  ├─ middleware/
-│  ├─ models/
-│  ├─ routes/
-│  ├─ package.json
-│  └─ server.js
-├─ frontend/
-│  ├─ public/
-│  ├─ src/
-│  ├─ package.json
-│  └─ vite.config.js
-└─ README.md
+|-- backend/
+|   |-- config/
+|   |-- controllers/
+|   |-- middleware/
+|   |-- models/
+|   |-- routes/
+|   |-- package.json
+|   `-- server.js
+|-- frontend/
+|   |-- public/
+|   |-- src/
+|   |-- package.json
+|   `-- vite.config.js
+`-- README.md
 ```
 
 ## Core User Flows
 
-### Search and discovery
+### Search and Discovery
 - Browse properties in list view or map view
 - Search by city, locality, office, college, or landmark
 - Filter by property type, price, amenities, preferred audience, and commute time
@@ -63,7 +63,7 @@ RoomBookify/
 - Completed bookings can submit structured liveability reviews
 - Reviews capture overall rating plus Wi-Fi, food, cleanliness, safety, and rule flexibility
 
-### Provider tools
+### Provider Tools
 - Add and edit property listings
 - Include map coordinates
 - Add commute information and move-in assurance details
@@ -80,7 +80,7 @@ After seeding demo data:
 
 ## Local Setup
 
-### 1. Clone and install
+### 1. Install dependencies
 
 ```bash
 cd backend
@@ -108,7 +108,7 @@ FRONTEND_URL=http://localhost:5173
 PORT=5000
 ```
 
-Create `frontend/.env` if needed for frontend-specific overrides.
+Create `frontend/.env` if you need frontend-specific overrides.
 
 ### 3. Start the backend
 
@@ -125,7 +125,7 @@ Open:
 http://localhost:5000/api/seed
 ```
 
-The seed route is refresh-friendly and populates demo properties, rooms, bookings, and review data.
+The seed route refreshes demo properties, rooms, bookings, and review data.
 
 ### 5. Start the frontend
 
@@ -172,7 +172,7 @@ http://localhost:5173
 - `GET /api/health`
 - `GET /api/seed`
 
-## Build Verification
+## Verification
 
 Frontend production build:
 
@@ -181,7 +181,7 @@ cd frontend
 npm run build
 ```
 
-Backend syntax checks:
+Backend syntax check:
 
 ```bash
 node --check backend/server.js
